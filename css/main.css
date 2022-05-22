@@ -21,7 +21,6 @@ footer {
   padding: 60px 0px;
 }
 
-.section-hero,
 footer {
   background-color: #2f303a;
 }
@@ -83,14 +82,14 @@ a {
   display: -ms-flexbox;
   display: flex;
   margin-left: 93px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1;
-  letter-spacing: 0.02em;
 }
 
 .navigation__item {
   margin-right: 50px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 .navigation__list :last-child,
@@ -142,9 +141,6 @@ a {
 }
 
 .contact-data__item {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,6 +148,12 @@ a {
 }
 
 .contact-data__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #757575;
   font-weight: 500;
   font-size: 14px;
@@ -170,17 +172,18 @@ a {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-data {
+.contact-data, .contact-data__link {
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-data__item:hover .contact-data__icon,
-.contact-data__item:focus .contact-data__icon,
-.contact-data__item:hover .contact-data__link,
-.contact-data__item:focus .contact-data__link {
-  color: #2196f3;
+.contact-data__link:hover .contact-data__icon,
+.contact-data__link:focus .contact-data__icon {
   fill: #2196f3;
+}
+
+.contact-data__link:hover, .contact-data__link:focus {
+  color: #2196f3;
 }
 
 .contact-data :last-child {
@@ -293,6 +296,10 @@ a {
   width: 370px;
   margin-left: 30px;
   margin-bottom: 30px;
+  -webkit-transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project__side {
@@ -304,11 +311,6 @@ a {
 
 .project__image {
   display: block;
-}
-
-.project__item:hover .overlay {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
 }
 
 .project__name {
@@ -341,14 +343,19 @@ a {
   display: block;
 }
 
-.project_item:hover {
+.project__item:hover .project__side .overlay {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.project__item:hover, .project__item:focus {
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   border-radius: 0px 0px 4px 4px;
 }
 
 /*----інший бік карточки ----*/
-.overlay {
+.project__side .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -364,11 +371,10 @@ a {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.overlay__text {
+.project__side .overlay__text {
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 63px;
-  text-align: justify;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -540,15 +546,14 @@ footer .logo {
 /*--оформлення логотипу--*/
 /*-- Секція Герой--*/
 .section-hero {
+  background-color: #2f303a;
+  max-height: 600px;
+}
+
+.section-hero__content {
   text-align: center;
-  padding-top: 215px;
-  padding-bottom: 185px;
-  background-size: 1600px 600px;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4)));
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
-  background-image: url(../images/hero.svg);
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .section-hero__title {
@@ -567,6 +572,19 @@ footer .logo {
   font-size: 36px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+}
+
+.section-hero .overlay {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
+  background-size: 1600px 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4)));
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+  background-image: url(../images/hero.svg);
 }
 
 /*-- Секція Герой--*/
@@ -742,6 +760,7 @@ address {
 /*--підписатись на розсилку--*/
 .section-signup {
   display: block;
+  padding-top: 12px;
   margin-left: 93px;
   width: auto;
   height: 86px;

@@ -12,14 +12,15 @@
     display: -ms-flexbox;
     display: flex;
     margin-left: 93px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1;
-    letter-spacing: 0.02em;
+
 }
 
 &__item {
     margin-right: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.02em;
 }
 
 &__list :last-child,
