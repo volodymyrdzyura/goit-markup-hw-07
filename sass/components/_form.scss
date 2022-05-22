@@ -192,3 +192,8 @@ input:focus+.icon-box,
 &:hover &_icon {
     fill: $hover-text-color;
 }}
+
+.client-data {
+color: $form_text;
+font-size: 12px;
+}
